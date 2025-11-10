@@ -1,0 +1,638 @@
+/* Global responsive helpers added by ChatGPT */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== TESTIMONIALS PAGE STYLES ===== */
+/* This file contains all styles specific to the Testimonials page */
+
+/* CSS Variables for consistent theming */
+:root {
+    --primary-color: #4da6ff;
+    --primary-dark: #2a7bc8;
+    --secondary-color: #ffffff;
+    --text-color: #333333;
+    --light-gray: #f5f5f5;
+    --medium-gray: #e0e0e0;
+    --dark-gray: #777777;
+}
+
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ===== HEADER STYLES ===== */
+header {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* UPDATED: full-width header container, logo left, nav right */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    margin: 0;
+}
+
+.logo h1 span {
+    color: var(--text-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 20px 0;
+    display: inline-block;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+/* ===== PAGE HEADER SECTION ===== */
+.page-header {
+    background: linear-gradient(rgba(3, 107, 211, 0.8), rgba(77, 166, 255, 0.9));
+    background-size: cover;
+    background-position: center;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 200px 20px 150px;
+    margin-top: 0;
+}
+
+.page-header h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+/* ===== TESTIMONIALS SECTION ===== */
+.testimonials {
+    padding: 80px 0;
+}
+
+/* ===== TESTIMONIAL SLIDER STYLES ===== */
+.testimonial-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.testimonial-slide {
+    display: none; /* Hide all slides by default */
+    background-color: var(--secondary-color);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-slide.active {
+    display: block; /* Show active slide */
+}
+
+/* Quote icon styling */
+.quote-icon {
+    font-size: 30px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Testimonial author information */
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.testimonial-author img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* Circular images */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-right: 20px;
+}
+
+.author-info h4 {
+    margin-bottom: 5px;
+}
+
+/* Slider navigation controls */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%); /* Vertically center */
+    padding: 0 6px;
+}
+
+.prev-btn, .next-btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; /* Circular buttons */
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* ===== VIDEO TESTIMONIALS SECTION ===== */
+.video-testimonials {
+    margin-top: 60px;
+}
+
+.video-testimonials h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 32px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.video-card {
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+}
+
+.video-thumbnail {
+    position: relative;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Play button overlay */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(77, 166, 255, 0.8); /* Semi-transparent primary color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.play-button i {
+    color: var(--secondary-color);
+    font-size: 20px;
+    margin-left: 1px; /* Fine-tune play icon position */
+}
+
+.video-card h3 {
+    padding: 15px 20px 5px;
+}
+
+.video-card p {
+    padding: 0 20px 20px;
+    color: var(--dark-gray); /* Lighter text color */
+}
+
+/* ===== CASE STUDIES SECTION ===== */
+.case-studies h2 {
+    text-align: center;
+    margin: 60px 0 40px;
+    font-size: 32px;
+}
+
+/* Default: mobile-first stacked layout */
+.case-study {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.case-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.case-image img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.case-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.case-content h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.case-content p {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Case study button – nice on mobile */
+.case-content .btn {
+    margin-top: 10px;
+    display: inline-block;
+    min-width: 220px;
+    padding: 12px 26px;
+    border-radius: 999px;
+}
+
+/* Desktop / large screens: side-by-side layout */
+@media (min-width: 992px) {
+    .case-study {
+        display: grid;
+        grid-template-columns: 1.1fr 1.2fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .case-image {
+        justify-content: flex-start;
+    }
+
+    .case-image img {
+        max-width: 380px;
+    }
+
+    .case-content {
+        text-align: left;
+    }
+
+    .case-content p {
+        text-align: left;
+    }
+
+    .case-content .btn {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+}
+
+/* ===== VIDEO MODAL STYLES (UPDATED) ===== */
+.video-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000; /* High z-index to overlay everything */
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.8); /* Semi-transparent black background */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Show video modal when open */
+.video-modal.open {
+    display: flex;
+}
+
+/* Modal content: keep nice margins on desktop & mobile */
+.video-modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    max-height: 90vh;          /* never taller than viewport */
+    background: #000;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Video scales inside box without overflowing */
+#modal-video {
+    width: 100%;
+    height: auto;
+    max-height: calc(90vh - 40px); /* leave room for padding & close button */
+    border-radius: 8px;
+    object-fit: contain;           /* show whole video, keep aspect */
+    background: #000;
+}
+
+/* CLOSE BUTTON (with z-index) */
+.video-modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+    z-index: 2101;     /* Keep X above everything, especially the video */
+}
+
+/* ===== BUTTON STYLES (general) ===== */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 12px 30px;
+    border-radius: 400px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px solid var(--primary-color);
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--secondary-color);
+    margin-left: 15px;
+}
+
+.btn-outline:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* ===== FOOTER STYLES ===== */
+footer {
+    background-color: #2c3e50;
+    color: var(--secondary-color);
+    padding: 30px 0 0; /* Top padding only */
+}
+
+/* Footer content grid */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 10px;
+}
+
+/* Footer section headings */
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Underline effect for footer headings */
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.footer-section p,
+.footer-section ul li {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Icon styling in footer */
+.footer-section i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+/* Footer bottom section */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Social media icons */
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Tablet and smaller desktop screens */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        gap: 30px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    /* Mobile navigation */
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary-color);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    nav.active {
+        display: block;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    nav ul li {
+        margin: 0;
+    }
+    
+    nav ul li a {
+        padding: 15px 0;
+        display: block;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    .page-header h1 {
+        font-size: 32px;
+    }
+    
+    .footer-content {
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .social-icons {
+        margin-top: 10px;
+    }
+
+    /* Mobile modal size */
+    .video-modal-content {
+        width: 90%;
+        max-width: 480px;
+        max-height: 80vh;
+    }
+
+    #modal-video {
+        max-height: calc(80vh - 40px);
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 576px) {
+    .page-header {
+        padding: 150px 0 80px;
+    }
+    
+    .footer-content {
+        gap: 20px;
+    }
+    
+    footer {
+        padding: 20px 0 0;
+    }
+}

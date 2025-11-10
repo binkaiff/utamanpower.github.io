@@ -1,0 +1,232 @@
+:root {
+    --primary-color: #4da6ff;
+    --primary-dark: #2a7bc8;
+    --secondary-color: #ffffff;
+    --text-color: #333333;
+    --light-gray: #f5f5f5;
+
+    --back-bg: #243547; /* back button colour */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===== HEADER (ONLY LOGO) ===== */
+header {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo h1 {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.logo h1 span {
+    color: var(--text-color);
+}
+
+/* ===== HERO WITH IMAGE LIKE BACKGROUND ===== */
+.page-hero {
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 90px;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* ===== MAIN CONTENT ===== */
+.content {
+    padding-bottom: 60px;
+}
+
+.content h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.intro {
+    margin: 40px 0;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.two-column ul {
+    padding-left: 18px;
+}
+
+.process {
+    background-color: var(--light-gray);
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.process ol {
+    padding-left: 18px;
+}
+
+.process li + li {
+    margin-top: 8px;
+}
+
+/* ===== CTA CARD ===== */
+.cta-box {
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    padding: 35px 20px 40px;
+    border-radius: 18px;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.cta-box h2 {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.cta-box p {
+    max-width: 520px;
+    margin: 0 auto 22px;
+    font-size: 17px;
+}
+
+.btn.primary {
+    display: inline-block;
+    padding: 14px 34px;
+    border-radius: 999px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--primary-color);
+    transition: all 0.25s;
+}
+
+.btn.primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* ===== BACK BUTTON ===== */
+.back-wrapper {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 32px;
+    background-color: var(--back-bg);
+    color: #ffffff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.back-btn:hover {
+    opacity: 0.92;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 110px 16px 70px;
+        min-height: 320px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+    }
+
+    .cta-box {
+        padding: 28px 16px 32px;
+    }
+
+    .cta-box h2 {
+        font-size: 24px;
+    }
+}
